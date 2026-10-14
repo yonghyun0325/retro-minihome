@@ -3,6 +3,7 @@ target/
 
 # IDE 설정 (사람마다 달라서 올리지 않음)
 .idea/
+.smarttomcat/
 *.iml
 .classpath
 .project
