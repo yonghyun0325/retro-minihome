@@ -67,7 +67,6 @@
             <artifactId>slf4j-api</artifactId>
             <version>1.7.36</version>
         </dependency>
-        <!-- SLF4J 로그를 콘솔에 출력하는 구현체 (임시: 로깅 작업 때 교체) -->
     </dependencies>
 
     <build>
