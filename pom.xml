@@ -61,6 +61,13 @@
             <version>1.7.36</version>
             <scope>runtime</scope>
         </dependency>
+        <!-- 로그 API: 코드는 SLF4J 에만 의존하고, 실제로 출력하는 라이브러리는 바꿔 끼울 수 있다 -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.36</version>
+        </dependency>
+        <!-- SLF4J 로그를 콘솔에 출력하는 구현체 (임시: 로깅 작업 때 교체) -->
     </dependencies>
 
     <build>
