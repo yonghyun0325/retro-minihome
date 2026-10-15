@@ -191,6 +191,46 @@ h1, h2, p { margin: 0; }
     cursor: pointer;
 }
 
+/* ===== CONTENT: 탭 ===== */
+.tabs {
+    display: flex;
+    gap: 3px;
+    padding: 8px 12px 0;
+    background: #f3f9fd;
+    border-bottom: 1px solid var(--sky-line);
+}
+.tabs a {
+    margin-bottom: -1px;          /* 탭이 아래 선 위에 살짝 겹치게 */
+    padding: 4px 14px;
+    color: #4d6b80;
+    background: var(--sky-pale);
+    border: 1px solid var(--sky-line);
+    border-bottom: 0;
+    border-radius: 6px 6px 0 0;
+}
+.tabs a:hover { text-decoration: none; background: #fff; }
+.tabs a.on {
+    font-weight: bold;
+    color: var(--point);
+    background: #fff;
+    border-bottom: 1px solid #fff;  /* 선택된 탭은 아래 선을 흰색으로 덮어서 본문과 이어 보이게 */
+}
+.content-body { padding: 14px; }
+
+/* ===== 준비 중 화면 ===== */
+.ready { padding: 60px 0; text-align: center; color: var(--muted); }
+.ready-sign {
+    display: inline-block;
+    margin-bottom: 14px;
+    padding: 6px 16px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #333;
+    background: #fff;
+    border: 6px solid transparent;
+    border-image: repeating-linear-gradient(-45deg, #ffcc33 0 8px, #333 8px 16px) 6;
+}
+
 /* ===== 좁은 화면 (휴대폰) ===== */
 @media (max-width: 720px) {
     .frame { margin: 0; border-radius: 0; }
