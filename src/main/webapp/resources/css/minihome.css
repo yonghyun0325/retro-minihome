@@ -62,6 +62,9 @@ h1, h2, p { margin: 0; }
     width: 210px;
     flex: none;
     padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 .content {
     flex: 1;
@@ -135,6 +138,59 @@ h1, h2, p { margin: 0; }
     cursor: pointer;
 }
 
+/* ===== ASIDE 세부 ===== */
+.profile-photo {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9bb3c4;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border: 1px solid var(--line);
+    background: repeating-linear-gradient(45deg, #f5f9fc, #f5f9fc 6px, #eaf2f8 6px, #eaf2f8 12px);
+}
+.mood {
+    margin: 0;
+    display: flex;
+    gap: 6px;
+    padding-bottom: 8px;
+    border-bottom: 1px dotted var(--line);
+}
+.mood dt { font-size: 11px; font-weight: bold; color: var(--sky-deep); }
+.mood dd { margin: 0; color: var(--point); }
+.intro {
+    flex: 1;
+    color: #555;
+    white-space: pre-line;
+}
+.owner {
+    padding-top: 8px;
+    color: var(--muted);
+    border-top: 1px dotted var(--line);
+}
+.owner strong { color: var(--text); }
+.ilchon { display: flex; gap: 4px; }
+.ilchon-select {
+    flex: 1;
+    min-width: 0;
+    height: 22px;
+    font: inherit;
+    font-size: 11px;
+    border: 1px solid var(--line);
+}
+.btn-small {
+    height: 22px;
+    padding: 0 8px;
+    font: inherit;
+    font-size: 11px;
+    color: #fff;
+    background: var(--sky-deep);
+    border: 0;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
 /* ===== 좁은 화면 (휴대폰) ===== */
 @media (max-width: 720px) {
     .frame { margin: 0; border-radius: 0; }
@@ -143,4 +199,5 @@ h1, h2, p { margin: 0; }
     .aside, .content { min-height: 0; }
     .top-left { width: auto; }
     .top-right { flex-wrap: wrap; }
+    .profile-photo { height: 120px; }
 }

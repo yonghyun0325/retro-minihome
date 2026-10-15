@@ -1,6 +1,7 @@
 package kr.co.retrominihome.minihome.web;
 
 import java.io.IOException;
+import java.util.Arrays;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -26,5 +27,10 @@ public class MainServlet extends HttpServlet {
         req.setAttribute("bgmTitle", "봄날의 산책 (무료 음원)");
         req.setAttribute("todayCount", 12);
         req.setAttribute("totalCount", 3456);
+
+        req.setAttribute("ownerName", "홍길동");
+        req.setAttribute("mood", "행복 (^_^)");
+        req.setAttribute("intro", "미니홈피 오픈했어요~\n일촌 신청 언제나 환영!");
+        req.setAttribute("ilchonList", Arrays.asList("김철수 (베프)", "이영희 (동네친구)", "박민수 (동아리)"));
     }
 }
