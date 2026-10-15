@@ -54,7 +54,7 @@
             <artifactId>HikariCP</artifactId>
             <version>4.0.3</version>
         </dependency>
-        <!-- HikariCP 로그 출력용 (임시: 로깅 작업 때 교체) -->
+        <!-- SLF4J 로그를 콘솔에 출력하는 구현체 (임시: 로깅 작업 때 교체) -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
