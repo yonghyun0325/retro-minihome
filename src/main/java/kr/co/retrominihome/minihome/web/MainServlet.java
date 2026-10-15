@@ -15,6 +15,16 @@ public class MainServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
+        setDummyData(req);
         req.getRequestDispatcher(LAYOUT).forward(req, resp);
+    }
+
+    /** DB 를 붙이기 전까지 쓰는 임시 데이터 */
+    private void setDummyData(HttpServletRequest req) {
+
+        req.setAttribute("homeTitle", "길동이의 작은 방 ♪");
+        req.setAttribute("bgmTitle", "봄날의 산책 (무료 음원)");
+        req.setAttribute("todayCount", 12);
+        req.setAttribute("totalCount", 3456);
     }
 }

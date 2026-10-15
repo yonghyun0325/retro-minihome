@@ -21,8 +21,8 @@ body {
     color: var(--text);
     font: 12px/1.6 "Gulim", "굴림", "Dotum", "돋움", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
     background-color: #eef3f6;
-    background-image: radial-gradient(#d0dbe3 1px, transparent 1px);  /* 1px 점을 */
-    background-size: 8px 8px;                                          /* 8px 간격으로 반복 */
+    background-image: radial-gradient(#d0dbe3 1px, transparent 1px);
+    background-size: 8px 8px;
 }
 
 a { color: var(--link); text-decoration: none; }
@@ -33,7 +33,7 @@ h1, h2, p { margin: 0; }
 /* ===== 바깥 틀 ===== */
 .frame {
     max-width: 900px;
-    margin: 30px auto;          /* 좌우 auto = 가운데 정렬 */
+    margin: 30px auto;
     padding: 10px;
     background: var(--sky);
     border-radius: 16px;
@@ -41,15 +41,15 @@ h1, h2, p { margin: 0; }
 }
 .frame-inner {
     padding: 12px 14px 8px;
-    border: 2px dashed rgba(255, 255, 255, .9);   /* 흰 점선 = 바느질 느낌 */
+    border: 2px dashed rgba(255, 255, 255, .9);
     border-radius: 12px;
 }
 
 /* ===== 가운데: aside + content 2단 ===== */
 .body {
-    display: flex;              /* 자식들을 가로로 나란히 */
+    display: flex;
     gap: 14px;
-    align-items: stretch;       /* 두 칸 높이를 같게 */
+    align-items: stretch;
 }
 .aside,
 .content {
@@ -60,27 +60,65 @@ h1, h2, p { margin: 0; }
 }
 .aside {
     width: 210px;
-    flex: none;                 /* 줄어들지도 늘어나지도 않음 */
+    flex: none;
     padding: 12px;
 }
 .content {
-    flex: 1;                    /* 남는 폭을 전부 차지 */
-    min-width: 0;               /* 긴 글자가 있어도 칸이 밖으로 밀려나지 않게 */
+    flex: 1;
+    min-width: 0;
     overflow: hidden;
 }
 
-/* ===== TOP / BOTTOM ===== */
-.top {
-    display: flex;
-    align-items: flex-end;
-    gap: 14px;
-    margin-bottom: 8px;
-}
-.bottom {
-    margin-top: 8px;
-    text-align: center;
+/* ===== TOP 세부 ===== */
+.top-left {
+    width: 210px;
+    flex: none;
     font-size: 11px;
     color: #3f6680;
+    letter-spacing: .5px;
+}
+.top-left .today strong { color: var(--point); }
+.top-left .bar { margin: 0 6px; color: #fff; }
+
+.top-right {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 10px;
+}
+.home-title {
+    font-size: 14px;
+    color: #24527a;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.bgm {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 6px 3px 9px;
+    font-size: 11px;
+    white-space: nowrap;
+    background: #fff;
+    border: 1px solid var(--sky-deep);
+    border-radius: 11px;
+}
+.bgm-note { color: var(--point); }
+.bgm-title { max-width: 170px; overflow: hidden; text-overflow: ellipsis; }
+.bgm-btn {
+    width: 18px;
+    height: 16px;
+    padding: 0;
+    font-size: 8px;
+    line-height: 14px;
+    color: #555;
+    background: #f4f4f4;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    cursor: pointer;
 }
 
 /* ===== 좁은 화면 (휴대폰) ===== */
@@ -89,4 +127,6 @@ h1, h2, p { margin: 0; }
     .top, .body { flex-direction: column; align-items: stretch; }
     .aside { width: auto; }
     .aside, .content { min-height: 0; }
+    .top-left { width: auto; }
+    .top-right { flex-wrap: wrap; }
 }
