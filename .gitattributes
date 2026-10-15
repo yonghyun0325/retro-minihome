@@ -1,0 +1,14 @@
+# 줄바꿈: 저장소와 작업 폴더 모두 LF 로 통일 (PC 마다 다른 Git 설정에 의존하지 않기)
+* text=auto eol=lf
+
+# Windows 배치 파일은 CRLF 가 필요
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# 바이너리: 줄바꿈 변환과 diff 를 하지 않음
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary
