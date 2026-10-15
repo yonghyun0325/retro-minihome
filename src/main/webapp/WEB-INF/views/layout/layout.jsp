@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>미니홈피</title>
-  <%-- CSS 는 1-2 에서 연결 --%>
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/minihome.css">
 </head>
 <body>
   <div class="frame">
@@ -15,14 +15,14 @@
       </header>
       <div class="body">
         <aside class="aside">
-          <%-- TODO: aside.jsp include --%>
+          <jsp:include page="/WEB-INF/views/layout/aside.jsp" />
         </aside>
         <main class="content">
-          <%-- TODO: content.jsp include --%>
+          <jsp:include page="/WEB-INF/views/layout/content.jsp" />
         </main>
       </div>
       <footer class="bottom">
-        <%-- TODO: bottom.jsp include --%>
+        <jsp:include page="/WEB-INF/views/layout/bottom.jsp" />
       </footer>
     </div>
   </div>
