@@ -41,6 +41,26 @@
             <artifactId>taglibs-standard-impl</artifactId>
             <version>1.2.5</version>
         </dependency>
+        <!-- MySQL JDBC 드라이버: 26.x 는 MySQL 8.4 이상 지원 -->
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>26.7.0</version>
+            <scope>runtime</scope>
+        </dependency>
+        <!-- 커넥션 풀: 5.x 는 Java 11 이상이라 Java 8 을 지원하는 4.x 사용 -->
+        <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+            <version>4.0.3</version>
+        </dependency>
+        <!-- HikariCP 로그 출력용 (임시: 로깅 작업 때 교체) -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.7.36</version>
+            <scope>runtime</scope>
+        </dependency>
     </dependencies>
 
     <build>
