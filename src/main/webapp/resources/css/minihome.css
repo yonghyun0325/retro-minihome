@@ -1,0 +1,280 @@
+@charset "UTF-8";
+
+/* ===== 색상: 여기 값만 바꾸면 전체 색이 바뀐다 ===== */
+:root {
+    --sky: #a9d4ee;
+    --sky-deep: #5fa6d6;
+    --sky-line: #9cc3dd;
+    --sky-pale: #e4f1fa;
+    --text: #333;
+    --muted: #8a8a8a;
+    --line: #d6d6d6;
+    --point: #f27a1a;
+    --link: #2c6fb3;
+}
+
+/* 너비 계산에 테두리·안쪽 여백을 포함 */
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    color: var(--text);
+    font: 12px/1.6 "Gulim", "굴림", "Dotum", "돋움", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+    background-color: #eef3f6;
+    background-image: radial-gradient(#d0dbe3 1px, transparent 1px);
+    background-size: 8px 8px;
+}
+
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+ul { margin: 0; padding: 0; list-style: none; }
+h1, h2, p { margin: 0; }
+
+/* ===== 바깥 틀 ===== */
+.frame {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 10px;
+    background: var(--sky);
+    border-radius: 16px;
+    box-shadow: 0 3px 0 #8dbedd, 0 8px 20px rgba(0, 0, 0, .12);
+}
+.frame-inner {
+    padding: 12px 14px 8px;
+    border: 2px dashed rgba(255, 255, 255, .9);
+    border-radius: 12px;
+}
+
+/* ===== 가운데: aside + content 2단 ===== */
+.body {
+    display: flex;
+    gap: 14px;
+    align-items: stretch;
+}
+.aside,
+.content {
+    min-height: 430px;
+    background: #fff;
+    border: 1px solid var(--sky-line);
+    border-radius: 8px;
+}
+.aside {
+    width: 210px;
+    flex: none;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.content {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+}
+
+/* ===== TOP / BOTTOM ===== */
+.top {
+    display: flex;
+    align-items: flex-end;
+    gap: 14px;
+    margin-bottom: 8px;
+}
+.bottom {
+    margin-top: 8px;
+    text-align: center;
+    font-size: 11px;
+    color: #3f6680;
+}
+
+/* ===== TOP 세부 ===== */
+.top-left {
+    width: 210px;
+    flex: none;
+    font-size: 11px;
+    color: #3f6680;
+    letter-spacing: .5px;
+}
+.top-left .today strong { color: var(--point); }
+.top-left .bar { margin: 0 6px; color: #fff; }
+
+.top-right {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 10px;
+}
+.home-title {
+    font-size: 14px;
+    color: #24527a;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.bgm {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 6px 3px 9px;
+    font-size: 11px;
+    white-space: nowrap;
+    background: #fff;
+    border: 1px solid var(--sky-deep);
+    border-radius: 11px;
+}
+.bgm-note { color: var(--point); }
+.bgm-title { max-width: 170px; overflow: hidden; text-overflow: ellipsis; }
+.bgm-btn {
+    width: 18px;
+    height: 16px;
+    padding: 0;
+    font-size: 8px;
+    line-height: 14px;
+    color: #555;
+    background: #f4f4f4;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* ===== ASIDE 세부 ===== */
+.profile-photo {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9bb3c4;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border: 1px solid var(--line);
+    background: repeating-linear-gradient(45deg, #f5f9fc, #f5f9fc 6px, #eaf2f8 6px, #eaf2f8 12px);
+}
+.mood {
+    margin: 0;
+    display: flex;
+    gap: 6px;
+    padding-bottom: 8px;
+    border-bottom: 1px dotted var(--line);
+}
+.mood dt { font-size: 11px; font-weight: bold; color: var(--sky-deep); }
+.mood dd { margin: 0; color: var(--point); }
+.intro {
+    flex: 1;
+    color: #555;
+    white-space: pre-line;
+}
+.owner {
+    padding-top: 8px;
+    color: var(--muted);
+    border-top: 1px dotted var(--line);
+}
+.owner strong { color: var(--text); }
+.ilchon { display: flex; gap: 4px; }
+.ilchon-select {
+    flex: 1;
+    min-width: 0;
+    height: 22px;
+    font: inherit;
+    font-size: 11px;
+    border: 1px solid var(--line);
+}
+.btn-small {
+    height: 22px;
+    padding: 0 8px;
+    font: inherit;
+    font-size: 11px;
+    color: #fff;
+    background: var(--sky-deep);
+    border: 0;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* ===== CONTENT: 탭 ===== */
+.tabs {
+    display: flex;
+    gap: 3px;
+    padding: 8px 12px 0;
+    background: #f3f9fd;
+    border-bottom: 1px solid var(--sky-line);
+}
+.tabs a {
+    margin-bottom: -1px;          /* 탭이 아래 선 위에 살짝 겹치게 */
+    padding: 4px 14px;
+    color: #4d6b80;
+    background: var(--sky-pale);
+    border: 1px solid var(--sky-line);
+    border-bottom: 0;
+    border-radius: 6px 6px 0 0;
+}
+.tabs a:hover { text-decoration: none; background: #fff; }
+.tabs a.on {
+    font-weight: bold;
+    color: var(--point);
+    background: #fff;
+    border-bottom: 1px solid #fff;  /* 선택된 탭은 아래 선을 흰색으로 덮어서 본문과 이어 보이게 */
+}
+.content-body { padding: 14px; }
+
+/* ===== 준비 중 화면 ===== */
+.ready { padding: 60px 0; text-align: center; color: var(--muted); }
+.ready-sign {
+    display: inline-block;
+    margin-bottom: 14px;
+    padding: 6px 16px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #333;
+    background: #fff;
+    border: 6px solid transparent;
+    border-image: repeating-linear-gradient(-45deg, #ffcc33 0 8px, #333 8px 16px) 6;
+}
+
+/* ===== 홈 화면 ===== */
+.box + .box { margin-top: 20px; }
+.box-title {
+    margin-bottom: 4px;
+    padding-bottom: 4px;
+    font-size: 12px;
+    color: var(--sky-deep);
+    border-bottom: 1px dotted var(--sky-deep);
+}
+.news-list li,
+.comment-list li {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding: 6px 2px;
+    border-bottom: 1px dotted #e3e3e3;
+}
+.tag {
+    flex: none;
+    padding: 0 5px;
+    font-size: 11px;
+    color: #fff;
+    background: var(--sky-deep);
+    border-radius: 3px;
+}
+.news-title,
+.comment-list .text {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.writer { flex: none; font-size: 11px; color: var(--link); }
+.date { flex: none; font-size: 11px; color: var(--muted); }
+.empty { color: var(--muted); }
+
+/* ===== 좁은 화면 (휴대폰) ===== */
+@media (max-width: 720px) {
+    .frame { margin: 0; border-radius: 0; }
+    .top, .body { flex-direction: column; align-items: stretch; }
+    .aside { width: auto; }
+    .aside, .content { min-height: 0; }
+    .top-left { width: auto; }
+    .top-right { flex-wrap: wrap; }
+    .profile-photo { height: 120px; }
+}
