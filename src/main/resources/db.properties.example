@@ -1,0 +1,7 @@
+# MySQL 접속 정보 예시
+# 이 파일을 복사해서 같은 폴더에 db.properties 를 만들고 실제 값을 넣는다 (db.properties 는 Git 에 올리지 않는다)
+db.driver=com.mysql.cj.jdbc.Driver
+db.url=jdbc:mysql://localhost:3306/retro_minihome?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+db.username=minihome_app
+db.password=CHANGE_ME
+db.pool.maximumPoolSize=10
